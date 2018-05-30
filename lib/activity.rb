@@ -13,7 +13,10 @@ class Activity
   end
 
   def total_bill
-
+    require "pry"; binding.pry
+    @participants.map do |person|
+      @bill[person] = 0
+    end
   end
   #
   # def cost_per_person
