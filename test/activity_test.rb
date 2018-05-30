@@ -18,8 +18,14 @@ class ActivityTest < Minitest::Test
   end
 
   def test_participants_are_added_to_the_activity
-    activity = Activity.new('Fun Run')
+    activity = Activity.new('Fun Run', 100)
 
-    assert_equal ['Jane'], activity.add_participants
+    assert_equal ['Jane'], activity.add_participants('Jane')
+  end
+
+  def test_participants_are_added_to_the_bill
+    activity = Activity.new('SparkleFest', 1000)
+
+    assert_equal {}
   end
 end
