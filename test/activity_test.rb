@@ -17,6 +17,13 @@ class ActivityTest < Minitest::Test
     assert_equal [], activity.participants
   end
 
+
+  # def test_participants_start_with_no_bill
+  #   activity = Activity.new('Fun Run')
+  #
+  #   assert_equal {}, activity.bill
+  # end
+
   def test_participants_are_added_to_the_activity
     activity = Activity.new('Fun Run', 100)
     person_1 = 'Jane'
@@ -42,4 +49,5 @@ class ActivityTest < Minitest::Test
 
     assert_equal {"Jane"=>0, "Juan"=>0, "Jessie"=>0}, activity.total_bill
   end
+
 end
