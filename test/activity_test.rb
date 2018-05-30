@@ -19,13 +19,27 @@ class ActivityTest < Minitest::Test
 
   def test_participants_are_added_to_the_activity
     activity = Activity.new('Fun Run', 100)
+    person_1 = 'Jane'
+    person_2 = 'Juan'
+    person_3 = 'Jessie'
 
-    assert_equal ['Jane'], activity.add_participants('Jane')
+    activity.add_participants(person_1)
+    activity.add_participants(person_2)
+    activity.add_participants(person_3)
+
+    assert_equal ['Jane', 'Juan', 'Jessie'], activity.participants
   end
 
   def test_participants_are_added_to_the_bill
     activity = Activity.new('SparkleFest', 1000)
+    person_1 = 'Jane'
+    person_2 = 'Juan'
+    person_3 = 'Jessie'
 
-    assert_equal {}
+    activity.add_participants(person_1)
+    activity.add_participants(person_2)
+    activity.add_participants(person_3)
+
+    assert_equal {"Jane"=>0, "Juan"=>0, "Jessie"=>0}, activity.total_bill
   end
 end
